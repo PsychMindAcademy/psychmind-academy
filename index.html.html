@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsychMind Academy</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+    }
+
+    /* Header */
+    header {
+      background: #161b22;
+      padding: 10px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    .logo-container h1 {
+      color: #ffffff;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: #c9d1d9;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff0000;
+      font-weight: bolder;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 180px 20px;
+    }
+    .hero h2 {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #00eeff;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 2rem;
+      font-family: 'Times New Roman', Times, serif;
+      color: #c9d1d9;
+      margin-bottom: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #238636;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Times New Roman', Times, serif ;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background: #2ea043;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #09ff00;
+      color: #ff7300;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Times New Roman', Times, serif;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-outline:hover {
+      background: #a371f7;
+      color: #fff;
+    }
+
+    /* Services Section */
+    #services {
+      padding: 100px 20px;
+      text-align: center;
+      background: #161b22;
+    }
+    #services h2 {
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: #00eeff;
+    }
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #21262d;
+      padding: 30px;
+      border-radius: 15px;
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background: #30363d;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #ff7300;
+    }
+    .card p {
+      font-size: 1rem;
+      color: #c9d1d9;
+    }
+
+    /* Teacher Button */
+    .teacher-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff7300, #ff0000);
+      color: #fff;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+    .teacher-btn:hover {
+      background: linear-gradient(45deg, #00eeff, #238636);
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0, 238, 255, 0.6);
+    }
+
+    /* Teacher Section */
+    #teacher {
+      padding: 180px 20px;
+      background: #161b22;
+      text-align: center;
+    }
+    #teacher h2 {
+      font-size: 3rem;
+      color: #00eeff;
+      margin-bottom: 70px;
+    }
+    #teacher p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #c9d1d9;
+    }
+
+    /* Teacher Stats */
+    .teacher-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+    .stat-box {
+      background: #21262d;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
+    }
+    .stat-box:hover {
+      transform: scale(1.1);
+      background: #30363d;
+    }
+    .stat-box h3 {
+      font-size: 2rem;
+      color: #00eeff;
+      margin-bottom: 10px;
+    }
+    .stat-box p {
+      font-size: 1.1rem;
+      color: #c9d1d9;
+    }
+
+    /* Footer Section */
+    footer {
+      background: #0d1117;
+      text-align: center;
+      padding: 80px 20px 30px;
+      margin-top: 100px;
+    }
+    footer img {
+      height: 50px;
+      width: 50px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+    }
+    footer h2 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+    footer p {
+      font-size: 1.1rem;
+      color: #c9d1d9;
+      margin-bottom: 50px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .footer-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .contact-box {
+      text-align: center;
+    }
+    .contact-box h4 {
+      font-size: 1.2rem;
+      color: #00eeff;
+      margin-bottom: 8px;
+    }
+    .contact-box a, .contact-box p {
+      color: #c9d1d9;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .contact-box a:hover {
+      color: #ff7300;
+    }
+    .footer-btn {
+      background: #238636;
+      color: #fff;
+      padding: 14px 40px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .footer-btn:hover {
+      background: #00eeff;
+      color: #0d1117;
+      transform: scale(1.08);
+    }
+    .footer-bottom {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="PsychMind Academy Logo">
+      <h1>PsychMind Academy</h1>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#tuition">Tuition</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h2>Nurturing Minds, Empowering Futures</h2>
+    <p>High-quality tuition in Psychology, Psychiatric Nursing, and Research & Statistics.  
+    Learn, grow, and excel with guidance tailored for your success.</p>
+    <div class="buttons">
+      <a href="#services"><button class="btn-primary">📘 What Do We Offer?</button></a>
+      <a href="#about"><button class="btn-outline">ℹ️ Know More About Us</button></a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>What Do We Offer?</h2>
+    <div class="service-cards">
+      <div class="card" onclick="window.open('https://docs.google.com/forms/d/1Hum_oCuHIhfrIT2GAHy81JD_YaNJZ4hft-14EjPXui4/edit','_blank')">
+        <h3>Psychology Tuition</h3>
+        <p>Comprehensive psychology lessons with a focus on concepts, applications, and career-building.</p>
+      </div>
+      <div class="card" onclick="window.open('https://docs.google.com/forms/d/11-cSSuuoWuFQEWlB_AHgvRC1Zp6kpO4xIsxAZ4gax1Y/edit', '_blank')">
+        <h3>Psychiatric Nursing Tuition</h3>
+        <p>Specialized tuition for psychiatric nursing students to master both theory and practice.</p>
+      </div>
+      <div class="card" onclick="window.open('https://docs.google.com/forms/d/16RqNFoyHF4OT2NNTdha01jRDcFQpbkmjBlzofx1r9pc/edit', '_blank')">
+        <h3>Research & Statistics</h3>
+        <p>Learn research methodology and statistical techniques with real-world applications.</p>
+      </div>
+    </div>
+
+    <!-- Counselling centered separately -->
+    <div class="service-cards" style="max-width:400px; margin-top:40px;">
+      <div class="card" onclick="window.open('https://docs.google.com/forms/d/1T0yibw5YUltdi-jJHppPd9tfK6HCM-l0HCJoPK5Unn4/edit', '_blank')">
+        <h3>Counselling</h3>
+        <p>Personalized guidance and counselling sessions for mental well-being and career growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" style="padding:100px 20px; background:#0d1117; text-align:center;">
+    <h2 style="font-size:3rem; color:#00eeff; margin-bottom:30px;">About Us</h2>
+    <p style="max-width:900px; margin:auto; font-size:1.2rem; line-height:1.8; color:#c9d1d9;">
+      At <strong>PsychMind Academy</strong>, we are dedicated to nurturing future psychologists, psychiatric nurses, and researchers.  
+      With years of expertise in mental health, education, and research, our mission is to make learning engaging, practical, and impactful.  
+      <br><br>
+      We believe in empowering students through personalized guidance, real-world applications, and a strong foundation in both theory and practice.  
+      Our counselling services ensure holistic development—helping individuals grow academically, professionally, and personally.
+    </p>
+
+    <!-- Know More About the Teacher Button -->
+    <div style="margin-top:40px; text-align:center;">
+      <a href="#teacher" class="teacher-btn">👩‍🏫 Know More About the Teacher</a>
+    </div>
+  </section>
+
+  <!-- Teacher Section -->
+  <section id="teacher">
+    <h2>Meet Mrs. Malati Chhetri</h2>
+    <p>
+      With a deep passion for education and mental health, Mrs. Malati Chhetri brings over a decade of experience in Psychology, Psychiatric Nursing, and Research.  
+      Known for a student-centered approach, the teaching style combines academic rigor with practical applications, making complex topics accessible and engaging.  
+      Beyond the classroom, she has contributed to research projects, academic publications, and mentoring programs that empower students to succeed both academically and personally.  
+      The vision is to create an environment where every learner feels inspired, supported, and equipped to excel in their chosen field.
+    </p>
+
+    <!-- Stats -->
+    <div class="teacher-stats">
+      <div class="stat-box">
+        <h3>17+</h3>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat-box">
+        <h3>10,000+</h3>
+        <p>Students Handled</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <img src="logo.png" alt="PsychMind Academy Logo">
+    <h2>Let’s Build a Brighter Future</h2>
+    <p>Ready to take the next step in your learning journey?  
+    Reach out to us for tuition, counselling, or guidance and let’s achieve excellence together.</p>
+
+    <div class="footer-contacts">
+      <div class="contact-box">
+        <h4>Email</h4>
+        <p>mindpsych7@gmail.com</p>
+      </div>
+      <div class="contact-box">
+        <h4>Phone</h4>
+        <p>+91-7318987280</p>
+      </div>
+    </div>
+
+    <a href="#services" class="footer-btn">🚀 Start Learning</a>
+
+    <div class="footer-bottom">
+      © 2024 PsychMind Academy. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
