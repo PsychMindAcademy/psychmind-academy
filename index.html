@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PsychMind Academy</title>
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png">
   <style>
     /* Reset */
@@ -27,13 +26,14 @@
     /* Header */
     header {
       background: #161b22;
-      padding: 10px 50px;
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
     .logo-container {
       display: flex;
@@ -49,10 +49,15 @@
       color: #ffffff;
       font-size: 1.5rem;
     }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     nav a {
       color: #c9d1d9;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 5px 10px;
       font-size: 1rem;
       transition: color 0.3s;
     }
@@ -64,16 +69,16 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 180px 20px;
+      padding: 120px 20px;
     }
     .hero h2 {
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: bold;
       color: #00eeff;
       margin-bottom: 20px;
     }
     .hero p {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-family: 'Times New Roman', Times, serif;
       color: #c9d1d9;
       margin-bottom: 40px;
@@ -180,14 +185,14 @@
 
     /* Teacher Section */
     #teacher {
-      padding: 180px 20px;
+      padding: 120px 20px;
       background: #161b22;
       text-align: center;
     }
     #teacher h2 {
       font-size: 3rem;
       color: #00eeff;
-      margin-bottom: 70px;
+      margin-bottom: 50px;
     }
     #teacher p {
       max-width: 800px;
@@ -298,6 +303,50 @@
       font-size: 0.9rem;
       color: #8b949e;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 8px 0;
+      }
+      #services h2, #teacher h2 {
+        font-size: 2.2rem;
+      }
+      .stat-box h3 {
+        font-size: 1.5rem;
+      }
+      footer h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 80px 10px;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .teacher-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+      .stat-box {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -345,7 +394,6 @@
       </div>
     </div>
 
-    <!-- Counselling centered separately -->
     <div class="service-cards" style="max-width:400px; margin-top:40px;">
       <div class="card" onclick="window.open('https://docs.google.com/forms/d/1T0yibw5YUltdi-jJHppPd9tfK6HCM-l0HCJoPK5Unn4/edit', '_blank')">
         <h3>Counselling</h3>
@@ -364,8 +412,6 @@
       We believe in empowering students through personalized guidance, real-world applications, and a strong foundation in both theory and practice.  
       Our counselling services ensure holistic development—helping individuals grow academically, professionally, and personally.
     </p>
-
-    <!-- Know More About the Teacher Button -->
     <div style="margin-top:40px; text-align:center;">
       <a href="#teacher" class="teacher-btn">👩‍🏫 Know More About the Teacher</a>
     </div>
@@ -381,7 +427,6 @@
       The vision is to create an environment where every learner feels inspired, supported, and equipped to excel in their chosen field.
     </p>
 
-    <!-- Stats -->
     <div class="teacher-stats">
       <div class="stat-box">
         <h3>17+</h3>
@@ -394,7 +439,7 @@
     </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer id="contact">
     <img src="logo.png" alt="PsychMind Academy Logo">
     <h2>Let’s Build a Brighter Future</h2>
@@ -420,3 +465,4 @@
   </footer>
 </body>
 </html>
+
