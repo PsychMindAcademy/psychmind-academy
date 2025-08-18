@@ -22,6 +22,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #0d1117;
       color: #ffffff;
+      line-height: 1.6;
     }
 
     /* Header */
@@ -34,46 +35,73 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
     }
+
     .logo-container {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .logo-container img {
-      height: 40px;
-      width: 40px;
+      height: 45px;
+      width: 45px;
       border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,238,255,0.6);
     }
+
     .logo-container h1 {
       color: #ffffff;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: bold;
     }
+
     nav a {
       color: #c9d1d9;
       text-decoration: none;
       margin: 0 15px;
       font-size: 1rem;
-      transition: color 0.3s;
+      transition: 0.3s ease;
+      position: relative;
     }
+
     nav a:hover {
       color: #ff0000;
-      font-weight: bolder;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0%;
+      height: 2px;
+      background: #ff0000;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 180px 20px;
+      padding: 180px 20px 150px;
+      background: linear-gradient(to bottom, #0d1117, #161b22);
     }
+
     .hero h2 {
-      font-size: 5rem;
+      font-size: 4.5rem;
       font-weight: bold;
       color: #00eeff;
       margin-bottom: 20px;
+      text-shadow: 0 0 12px rgba(0,238,255,0.6);
     }
+
     .hero p {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-family: 'Times New Roman', Times, serif;
       color: #c9d1d9;
       margin-bottom: 40px;
@@ -90,34 +118,41 @@
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .btn-primary {
       background: #238636;
       color: #fff;
-      padding: 12px 25px;
+      padding: 14px 30px;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: 'Times New Roman', Times, serif ;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-family: 'Times New Roman', Times, serif;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,238,100,0.3);
     }
+
     .btn-primary:hover {
       background: #2ea043;
+      transform: translateY(-3px);
     }
+
     .btn-outline {
       background: transparent;
       border: 2px solid #09ff00;
       color: #ff7300;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 14px 30px;
+      border-radius: 10px;
+      font-size: 1.1rem;
       font-family: 'Times New Roman', Times, serif;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
+
     .btn-outline:hover {
       background: #a371f7;
       color: #fff;
+      transform: translateY(-3px);
     }
 
     /* Services Section */
@@ -126,34 +161,43 @@
       text-align: center;
       background: #161b22;
     }
+
     #services h2 {
       font-size: 3rem;
       margin-bottom: 50px;
       color: #00eeff;
+      text-shadow: 0 0 10px rgba(0,238,255,0.6);
     }
+
     .service-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
+
     .card {
       background: #21262d;
       padding: 30px;
       border-radius: 15px;
-      transition: transform 0.3s, background 0.3s;
+      transition: 0.3s ease;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
+
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.02);
       background: #30363d;
+      box-shadow: 0 10px 25px rgba(0,238,255,0.3);
     }
+
     .card h3 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 15px;
       color: #ff7300;
     }
+
     .card p {
       font-size: 1rem;
       color: #c9d1d9;
@@ -172,6 +216,7 @@
       transition: all 0.4s ease;
       box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
     }
+
     .teacher-btn:hover {
       background: linear-gradient(45deg, #00eeff, #238636);
       transform: scale(1.08);
@@ -184,11 +229,14 @@
       background: #161b22;
       text-align: center;
     }
+
     #teacher h2 {
       font-size: 3rem;
       color: #00eeff;
       margin-bottom: 70px;
+      text-shadow: 0 0 10px rgba(0,238,255,0.6);
     }
+
     #teacher p {
       max-width: 800px;
       margin: auto;
@@ -205,23 +253,29 @@
       margin-top: 50px;
       flex-wrap: wrap;
     }
+
     .stat-box {
       background: #21262d;
       padding: 30px 40px;
       border-radius: 15px;
       text-align: center;
-      transition: transform 0.3s, background 0.3s;
+      transition: 0.3s ease;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
+
     .stat-box:hover {
       transform: scale(1.1);
       background: #30363d;
+      box-shadow: 0 10px 25px rgba(0,238,255,0.3);
     }
+
     .stat-box h3 {
       font-size: 2rem;
       color: #00eeff;
       margin-bottom: 10px;
     }
+
     .stat-box p {
       font-size: 1.1rem;
       color: #c9d1d9;
@@ -233,18 +287,23 @@
       text-align: center;
       padding: 80px 20px 30px;
       margin-top: 100px;
+      border-top: 1px solid #21262d;
     }
+
     footer img {
-      height: 50px;
-      width: 50px;
+      height: 55px;
+      width: 55px;
       margin-bottom: 20px;
       border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,238,255,0.6);
     }
+
     footer h2 {
       font-size: 2.2rem;
       color: #ffffff;
       margin-bottom: 15px;
     }
+
     footer p {
       font-size: 1.1rem;
       color: #c9d1d9;
@@ -254,6 +313,7 @@
       margin-right: auto;
       line-height: 1.6;
     }
+
     .footer-contacts {
       display: flex;
       justify-content: center;
@@ -261,22 +321,28 @@
       flex-wrap: wrap;
       margin-bottom: 40px;
     }
+
     .contact-box {
       text-align: center;
     }
+
     .contact-box h4 {
       font-size: 1.2rem;
       color: #00eeff;
       margin-bottom: 8px;
     }
-    .contact-box a, .contact-box p {
+
+    .contact-box a,
+    .contact-box p {
       color: #c9d1d9;
       text-decoration: none;
       font-size: 1rem;
     }
+
     .contact-box a:hover {
       color: #ff7300;
     }
+
     .footer-btn {
       background: #238636;
       color: #fff;
@@ -287,16 +353,68 @@
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-block;
+      box-shadow: 0 5px 15px rgba(0,238,100,0.3);
     }
+
     .footer-btn:hover {
       background: #00eeff;
       color: #0d1117;
       transform: scale(1.08);
     }
+
     .footer-bottom {
       margin-top: 40px;
       font-size: 0.9rem;
       color: #8b949e;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero h2 {
+        font-size: 2.8rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        max-width: 280px;
+      }
+
+      #services h2,
+      #teacher h2 {
+        font-size: 2.2rem;
+      }
+
+      .stat-box {
+        width: 100%;
+      }
+
+      .footer-contacts {
+        flex-direction: column;
+        gap: 20px;
+      }
     }
   </style>
 </head>
@@ -319,8 +437,7 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <h2>Nurturing Minds, Empowering Futures</h2>
-    <p>High-quality tuition in Psychology, Psychiatric Nursing, and Research & Statistics.  
-    Learn, grow, and excel with guidance tailored for your success.</p>
+    <p>High-quality tuition in Psychology, Psychiatric Nursing, and Research & Statistics. Learn, grow, and excel with guidance tailored for your success.</p>
     <div class="buttons">
       <a href="#services"><button class="btn-primary">📘 What Do We Offer?</button></a>
       <a href="#about"><button class="btn-outline">ℹ️ Know More About Us</button></a>
@@ -358,10 +475,10 @@
   <section id="about" style="padding:100px 20px; background:#0d1117; text-align:center;">
     <h2 style="font-size:3rem; color:#00eeff; margin-bottom:30px;">About Us</h2>
     <p style="max-width:900px; margin:auto; font-size:1.2rem; line-height:1.8; color:#c9d1d9;">
-      At <strong>PsychMind Academy</strong>, we are dedicated to nurturing future psychologists, psychiatric nurses, and researchers.  
-      With years of expertise in mental health, education, and research, our mission is to make learning engaging, practical, and impactful.  
+      At <strong>PsychMind Academy</strong>, we are dedicated to nurturing future psychologists, psychiatric nurses, and researchers.
+      With years of expertise in mental health, education, and research, our mission is to make learning engaging, practical, and impactful. 
       <br><br>
-      We believe in empowering students through personalized guidance, real-world applications, and a strong foundation in both theory and practice.  
+      We believe in empowering students through personalized guidance, real-world applications, and a strong foundation in both theory and practice. 
       Our counselling services ensure holistic development—helping individuals grow academically, professionally, and personally.
     </p>
 
@@ -375,9 +492,9 @@
   <section id="teacher">
     <h2>Meet Mrs. Malati Chhetri</h2>
     <p>
-      With a deep passion for education and mental health, Mrs. Malati Chhetri brings over a decade of experience in Psychology, Psychiatric Nursing, and Research.  
-      Known for a student-centered approach, the teaching style combines academic rigor with practical applications, making complex topics accessible and engaging.  
-      Beyond the classroom, she has contributed to research projects, academic publications, and mentoring programs that empower students to succeed both academically and personally.  
+      With a deep passion for education and mental health, Mrs. Malati Chhetri brings over a decade of experience in Psychology, Psychiatric Nursing, and Research. 
+      Known for a student-centered approach, the teaching style combines academic rigor with practical applications, making complex topics accessible and engaging. 
+      Beyond the classroom, she has contributed to research projects, academic publications, and mentoring programs that empower students to succeed both academically and personally. 
       The vision is to create an environment where every learner feels inspired, supported, and equipped to excel in their chosen field.
     </p>
 
@@ -398,8 +515,10 @@
   <footer id="contact">
     <img src="logo.png" alt="PsychMind Academy Logo">
     <h2>Let’s Build a Brighter Future</h2>
-    <p>Ready to take the next step in your learning journey?  
-    Reach out to us for tuition, counselling, or guidance and let’s achieve excellence together.</p>
+    <p>
+      Ready to take the next step in your learning journey? 
+      Reach out to us for tuition, counselling, or guidance and let’s achieve excellence together.
+    </p>
 
     <div class="footer-contacts">
       <div class="contact-box">
